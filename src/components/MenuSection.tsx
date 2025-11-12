@@ -17,7 +17,7 @@ const MenuSection = ({ category }: MenuSectionProps) => {
       >
         {category.emoji} {category.title}
       </motion.h3>
-      <div className={`grid ${category.gridCols} gap-6`}>
+      <div className={`grid grid-cols-1 ${category.gridCols} gap-6`}>
         {category.items.map((item, index) => (
           <MenuCard key={`${category.id}-${index}`} {...item} index={index} />
         ))}

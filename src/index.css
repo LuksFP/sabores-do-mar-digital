@@ -85,6 +85,10 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply bg-background text-foreground font-['Poppins',sans-serif] overflow-x-hidden;
     background-image: 

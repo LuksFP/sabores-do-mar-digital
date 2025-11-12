@@ -33,7 +33,7 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 wood-texture"
+                className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 md:hover:scale-105 wood-texture overflow-hidden"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-accent/10 p-4 rounded-full mb-4">
