@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { memo } from "react";
 import MenuCard from "./MenuCard";
 import type { MenuCategory } from "@/data/menuData";
 
@@ -6,7 +7,7 @@ interface MenuSectionProps {
   category: MenuCategory;
 }
 
-const MenuSection = ({ category }: MenuSectionProps) => {
+const MenuSection = memo(({ category }: MenuSectionProps) => {
   return (
     <section className="mb-16 last:mb-0">
       <motion.h3
@@ -24,6 +25,8 @@ const MenuSection = ({ category }: MenuSectionProps) => {
       </div>
     </section>
   );
-};
+});
+
+MenuSection.displayName = "MenuSection";
 
 export default MenuSection;

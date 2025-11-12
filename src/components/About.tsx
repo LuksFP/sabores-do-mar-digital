@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { memo } from "react";
 import sobreImage from "@/assets/sobre-interior.jpg";
 
-const About = () => {
+const About = memo(() => {
   return (
     <section id="sobre" className="py-20 bg-gradient-to-b from-secondary to-background">
       <div className="container mx-auto px-4">
@@ -41,11 +42,12 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="order-1 md:order-2"
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden shadow-card-hover group">
               <img
                 src={sobreImage}
-                alt="Interior do restaurante"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                alt="Interior aconchegante do restaurante Sabores do Brasil"
+                loading="lazy"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           </motion.div>
@@ -53,6 +55,8 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
+
+About.displayName = "About";
 
 export default About;

@@ -50,11 +50,20 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Gradientes e texturas */
-    --gradient-shimmer: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(255, 255, 255, 0.3) 50%, 
-      transparent 100%);
+    /* Sombras e elevações */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--wood-dark) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--wood-dark) / 0.1), 0 2px 4px -2px hsl(var(--wood-dark) / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--wood-dark) / 0.1), 0 4px 6px -4px hsl(var(--wood-dark) / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--wood-dark) / 0.1), 0 8px 10px -6px hsl(var(--wood-dark) / 0.1);
+
+    /* Transições */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Gradientes */
+    --gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    --gradient-tropical: linear-gradient(135deg, hsl(var(--sea-blue) / 0.1) 0%, hsl(var(--leaf-green) / 0.1) 100%);
   }
 
   .dark {
@@ -127,22 +136,29 @@ All colors MUST be HSL.
   }
   
   @keyframes shimmer {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 100%;
-    }
+    0% { left: -100%; }
+    100% { left: 100%; }
   }
   
   .wood-texture {
-    background-image: 
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 3px,
-        rgba(139, 90, 43, 0.03) 3px,
-        rgba(139, 90, 43, 0.03) 6px
-      );
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(139, 90, 43, 0.03) 3px,
+      rgba(139, 90, 43, 0.03) 6px
+    );
+  }
+
+  .transition-smooth {
+    transition: var(--transition-base);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-xl);
   }
 }

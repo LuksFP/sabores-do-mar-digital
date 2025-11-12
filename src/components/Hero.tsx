@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
+import { memo } from "react";
 import { Button } from "@/components/ui/button";
+import { useScrollTo } from "@/hooks/useScrollTo";
 import heroImage from "@/assets/hero-beach.jpg";
 
-const Hero = () => {
-  const scrollToCardapio = () => {
-    const element = document.getElementById("cardapio");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const Hero = memo(() => {
+  const scrollToSection = useScrollTo();
 
   return (
     <section
@@ -36,9 +33,9 @@ const Hero = () => {
             Experimente o verdadeiro gosto da culinária brasileira
           </p>
           <Button
-            onClick={scrollToCardapio}
+            onClick={() => scrollToSection("cardapio")}
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-smooth hover:scale-105 active:scale-95"
           >
             Ver Cardápio
           </Button>
@@ -46,6 +43,8 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;
