@@ -19,7 +19,7 @@ const MenuCard = ({ image, title, description, price, index }: MenuCardProps) =>
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card wood-texture border-2 border-border">
-        <div className="aspect-square overflow-hidden">
+        <div className="aspect-video overflow-hidden">
           <img
             src={image}
             alt={title}
